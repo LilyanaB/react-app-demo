@@ -13,13 +13,13 @@ const List = ({ item, removeItem, editItem }) => {
   };
 
   return (
-    <div className="todo-list flex-column">
+    <div className="todo-list">
       <article
-        key={id}
         className={completed ? "flex flex-row div-disabled" : "todo-item flex "}
+        key={id}
       >
         <p className="title">{title}</p>
-        <div className="btn-container flex flex-row gap1">
+        <div className="btn-container flex flex-row gap-1">
           <button
             type="button"
             className="btn-list list-btn-edit"
