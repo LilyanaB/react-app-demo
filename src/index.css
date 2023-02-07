@@ -74,6 +74,53 @@ select {
 }
 
 body {
-  background: black;
-  color: white;
+  background: #212424;
+}
+.section-wrapper {
+  width: 35%;
+  border-radius: 1rem;
+  padding: 5rem;
+  margin: 10rem auto;
+  background-color: #f3edef;
+}
+.flex {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+}
+.gap-1 {
+  gap: 1rem;
+}
+.todo-item {
+  align-items: center;
+  justify-content: space-between;
+}
+.btn-list {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  color: #49678d;
+}
+.btn-list-disabled {
+}
+.list-btn-delete:hover {
+  color: #f02c31;
+}
+.list-btn-complete:hover {
+  color: #14ceb8;
+}
+.list-btn-edit {
+  color: #49678d;
+}
+.div-disabled {
+  align-items: center;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0.5;
+  background: #bcf3ed;
 }
