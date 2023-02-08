@@ -3,13 +3,10 @@ import { useState } from "react";
 
 import React from "react";
 const List = ({ item, removeItem, editItem }) => {
-  const { id, title } = item;
+  const { id, title, status } = item;
   const [completed, setComeplted] = useState(false);
   const markCompleted = () => {
-    // const individualItem = items.find((item) => item.id === id);
-    // if (individualItem) {
     setComeplted(true);
-    //   console.log(id, completed);
   };
 
   return (
