@@ -6,17 +6,30 @@ import Alert from "./components/Alert.jsx";
 import Form from "react-bootstrap/Form";
 import "./index.css";
 
+const getLocalItems = () => {
+  const itemStorage = localStorage.getItem("items");
+  if (itemStorage) {
+    return JSON.parse(localStorage.getItem("items"));
+  } else {
+    return [];
+  }
+};
+
 function App() {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalItems());
   const [isEdditing, setIsEdditing] = useState(false);
 
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({
-    show: true,
+    show: false,
     msg: "",
     type: "",
   });
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(list));
+  }, [list]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,10 +49,10 @@ function App() {
       setIsEdditing(false);
       showAlert(true, "success", "TO DO Changed");
     } else {
-      showAlert(true, "success", "TO DO Added");
       const newItem = {
         id: new Date().getTime().toString(),
         title: name,
+        status: false,
       };
       setList([...list, newItem]);
       setName("");
