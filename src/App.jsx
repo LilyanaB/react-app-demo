@@ -109,6 +109,9 @@ function App() {
               removeItem={removeItem}
               editItem={editItem}
               item={item}
+              key={item.id}
+              list={list}
+              setList={setList}
             />
           ))}
           <Button variant="outline-danger" type="button" onClick={clearList}>

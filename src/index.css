@@ -121,6 +121,9 @@ body {
 .list-btn-edit {
   color: #49678d;
 }
+.list-btn-edit:hover {
+  color: #9fbfe9;
+}
 .div-disabled {
   align-items: center;
   justify-content: space-between;
